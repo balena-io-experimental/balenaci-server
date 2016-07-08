@@ -27,7 +27,7 @@ module Resinci
       end
 
       def run(name:, version:)
-        cmd="docker run -d --privileged -p $$:2375 %s \
+        cmd="docker run -d --privileged -P %s \
           -v #{CERT_PATH}:/mnt \
           --label io.resin.dev.dind=%s \
           library/docker:%s-dind docker daemon \
