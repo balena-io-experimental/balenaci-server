@@ -8,9 +8,7 @@ module Resinci
       end
 
       def port
-        data = @data["HostConfig"]["PortBindings"]
-
-        data.values.flatten.map { |n| n["HostPort"] }.first
+        @port ||= @data["NetworkSettings"]["Ports"]["2375/tcp"][0]["HostPort"]
       end
 
       def start
