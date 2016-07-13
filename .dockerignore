@@ -1,0 +1,6 @@
+*.swp
+*.swo
+tmp
+log
+tags
+.git
